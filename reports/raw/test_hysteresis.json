@@ -1,0 +1,72 @@
+{
+  "cycles": 65524,
+  "ready_cycle": 267,
+  "last_processed_cycle": 64914,
+  "offered": 64,
+  "accepted": 64,
+  "processed": 64,
+  "dropped": 0,
+  "high_water": 1,
+  "retired": 17911,
+  "halted": 0,
+  "fault": 0,
+  "fault_pc": 0,
+  "gpio": 2,
+  "memory": {
+    "32": 64,
+    "33": 750,
+    "34": 1,
+    "35": 1,
+    "36": 0,
+    "37": 0,
+    "38": 0,
+    "39": 0,
+    "40": 0,
+    "41": 0,
+    "42": 0,
+    "43": 0,
+    "44": 0,
+    "45": 0,
+    "46": 0,
+    "47": 0
+  },
+  "uart": [
+    165,
+    1,
+    32,
+    3,
+    165,
+    0,
+    238,
+    2
+  ],
+  "name": "test_hysteresis",
+  "interval_cycles": 1024,
+  "seed": 14,
+  "metadata": {
+    "source_sha256": "6839d37bf0bf3f29f39a46947f3fb0888ccbb871100384502caaac2c2faa4d63",
+    "firmware_sha256": "30109dac80da5043bf03de693f3015a0df74f2e92d873b6dead307daa6e7719d"
+  },
+  "workload_sha256": "0ece9cbb2c1f843b69aa3863b7b2ee36659f62c2234c0920582fb8d4b1213bd3",
+  "mean_processing_cycles": 59.4375,
+  "max_processing_cycles": 118,
+  "mean_queue_cycles": 16.9375,
+  "alarm_latency_cycles": [
+    89,
+    93
+  ],
+  "alarm_events": [
+    {
+      "sample_index": 15,
+      "state": 1,
+      "average_deci_c": 800
+    },
+    {
+      "sample_index": 63,
+      "state": 0,
+      "average_deci_c": 750
+    }
+  ],
+  "cycles_per_offered_sample": 1024,
+  "application_matches": true
+}

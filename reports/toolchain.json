@@ -1,0 +1,27 @@
+{
+  "packages": {
+    "verilator": "5.48.0",
+    "yowasp-yosys": "0.70.0.0.post1259",
+    "yowasp-runtime": "1.96",
+    "cmake": "4.4.4",
+    "ninja": "1.13.2",
+    "wasmtime": "47.0.1"
+  },
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "win32",
+  "verilator_binary": "rev vUNKNOWN-built20260516-4e853d8",
+  "yosys": "Yosys 0.70 (git sha1 28ba3cb92, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)",
+  "compiler": "MSVC",
+  "compiler_version": "19.51.36256.0",
+  "sdk_headers_version": "10.0.28000.0",
+  "sdk_source": "project-local NuGet",
+  "sdk_package_version": "10.0.28000.2705",
+  "sdk_archive_sha256": {
+    "microsoft.windows.sdk.cpp.nupkg": "a74ca8f9af98bd61925d9e2932ad98f746306123167b8f0bba99cd9ea9f03807",
+    "microsoft.windows.sdk.cpp.x64.nupkg": "bf892c1048059984850a1ed79bb81c0243478c6d7472d637c90565ab5c836013"
+  },
+  "metadata": {
+    "source_sha256": "6839d37bf0bf3f29f39a46947f3fb0888ccbb871100384502caaac2c2faa4d63",
+    "firmware_sha256": "30109dac80da5043bf03de693f3015a0df74f2e92d873b6dead307daa6e7719d"
+  }
+}

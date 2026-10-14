@@ -1,0 +1,62 @@
+{
+  "cycles": 64876,
+  "ready_cycle": 267,
+  "last_processed_cycle": 64855,
+  "offered": 64,
+  "accepted": 64,
+  "processed": 64,
+  "dropped": 0,
+  "high_water": 1,
+  "retired": 17735,
+  "halted": 0,
+  "fault": 0,
+  "fault_pc": 0,
+  "gpio": 3,
+  "memory": {
+    "32": 64,
+    "33": 800,
+    "34": 1,
+    "35": 0,
+    "36": 0,
+    "37": 0,
+    "38": 0,
+    "39": 0,
+    "40": 0,
+    "41": 0,
+    "42": 0,
+    "43": 0,
+    "44": 0,
+    "45": 0,
+    "46": 0,
+    "47": 0
+  },
+  "uart": [
+    165,
+    1,
+    32,
+    3
+  ],
+  "name": "test_threshold_noise",
+  "interval_cycles": 1024,
+  "seed": 14,
+  "metadata": {
+    "source_sha256": "6839d37bf0bf3f29f39a46947f3fb0888ccbb871100384502caaac2c2faa4d63",
+    "firmware_sha256": "30109dac80da5043bf03de693f3015a0df74f2e92d873b6dead307daa6e7719d"
+  },
+  "workload_sha256": "2b54112f61dc61502e88c04cadd65e44357272b44454a84bc1ac2907f340a226",
+  "mean_processing_cycles": 58.515625,
+  "max_processing_cycles": 118,
+  "mean_queue_cycles": 16.9375,
+  "alarm_latency_cycles": [
+    89
+  ],
+  "alarm_events": [
+    {
+      "sample_index": 15,
+      "state": 1,
+      "average_deci_c": 800
+    }
+  ],
+  "cycles_per_offered_sample": 1024,
+  "application_matches": true
+}

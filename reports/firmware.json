@@ -1,0 +1,15 @@
+{
+  "instruction_words": 59,
+  "image_sha256": "30109dac80da5043bf03de693f3015a0df74f2e92d873b6dead307daa6e7719d",
+  "labels": {
+    "clear_ring": 4,
+    "poll": 15,
+    "warm_done": 29,
+    "alarm_off": 40,
+    "event": 46,
+    "finish": 56
+  },
+  "window": 16,
+  "alarm_on_deci_c": 800,
+  "alarm_off_deci_c": 750
+}

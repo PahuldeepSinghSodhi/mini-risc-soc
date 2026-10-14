@@ -1,0 +1,1103 @@
+
+-- Running command `read_slang -j 1 rtl/mini_risc_pkg.sv rtl/alu.sv rtl/control_unit.sv rtl/immediate_generator.sv rtl/instruction_decoder.sv rtl/mini_risc_cpu.sv rtl/mini_risc_soc.sv rtl/register_file.sv rtl/sync_fifo.sv rtl/uart.sv --top mini_risc_cpu; synth -top mini_risc_cpu -noabc -run begin:coarse; write_json build/mini_risc_cpu_coarse.json; synth -top mini_risc_cpu -noabc -run fine:check; check -assert; tee -o reports/mini_risc_cpu_stat.json stat -json' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    mini_risc_cpu
+
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$185'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$149'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$79'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$41'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$25'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$13'.
+Cleaned up 6 empty switches.
+<suppressed ~101 debug messages>
+
+1.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $185 in module mini_risc_cpu.
+Marked 13 switch rules as full_case in process $185 in module mini_risc_cpu.
+Marked 1 switch rules as full_case in process $79 in module mini_risc_cpu.
+Marked 1 switch rules as full_case in process $41 in module mini_risc_cpu.
+Marked 1 switch rules as full_case in process $25 in module mini_risc_cpu.
+Marked 1 switch rules as full_case in process $13 in module mini_risc_cpu.
+Removed a total of 1 dead cases.
+
+1.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 9 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.4. Executing PROC_INIT pass (extract init attributes).
+
+1.5. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~19 debug messages>
+
+1.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\mini_risc_cpu.$185'.
+     1/43: $state$218
+     2/43: $retire_valid$217
+     3/43: $pc$216
+     4/43: $fault_pc$215
+     5/43: $fault_cause$214
+     6/43: $state$223
+     7/43: $retire_valid$222
+     8/43: $pc$221
+     9/43: $fault_pc$220
+    10/43: $fault_cause$219
+    11/43: $state$198
+    12/43: $pc$197
+    13/43: $state$201
+    14/43: $saved_write$204
+    15/43: $saved_data$203
+    16/43: $saved_addr$202
+    17/43: $retire_valid$200
+    18/43: $pc$199
+    19/43: $state$209
+    20/43: $saved_write$212
+    21/43: $saved_data$211
+    22/43: $saved_addr$210
+    23/43: $retire_valid$208
+    24/43: $pc$207
+    25/43: $fault_pc$206
+    26/43: $fault_cause$205
+    27/43: $state$228
+    28/43: $state$190
+    29/43: $instr$191
+    30/43: $fault_pc$189
+    31/43: $fault_cause$188
+    32/43: $instr$195
+    33/43: $state$194
+    34/43: $fault_pc$193
+    35/43: $fault_cause$192
+    36/43: $saved_write$232
+    37/43: $saved_data$231
+    38/43: $saved_addr$230
+    39/43: $instr$229
+    40/43: $retire_valid$227
+    41/43: $pc$226
+    42/43: $fault_pc$225
+    43/43: $fault_cause$224
+Creating decoders for process `\mini_risc_cpu.$149'.
+     1/1: $rf.regs$161
+Creating decoders for process `\mini_risc_cpu.$79'.
+     1/2: $arithmetic.result$86
+     2/2: $arithmetic.overflow$87
+Creating decoders for process `\mini_risc_cpu.$41'.
+     1/8: $control.illegal$51
+     2/8: $control.halt$50
+     3/8: $control.wb_src$49
+     4/8: $control.alu_op$48
+     5/8: $control.alu_src$47
+     6/8: $control.mem_write$46
+     7/8: $control.mem_read$45
+     8/8: $control.reg_write$44
+Creating decoders for process `\mini_risc_cpu.$25'.
+     1/1: $imm.imm_out$26
+Creating decoders for process `\mini_risc_cpu.$13'.
+     1/1: $dec.fmt$14
+
+1.7. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 15 empty switches in `\mini_risc_cpu.$185'.
+Removing empty process `mini_risc_cpu.$185'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$149'.
+Removing empty process `mini_risc_cpu.$149'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$79'.
+Removing empty process `mini_risc_cpu.$79'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$41'.
+Removing empty process `mini_risc_cpu.$41'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$25'.
+Removing empty process `mini_risc_cpu.$25'.
+Found and cleaned up 1 empty switch in `\mini_risc_cpu.$13'.
+Removing empty process `mini_risc_cpu.$13'.
+Cleaned up 20 empty switches.
+
+1.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+<suppressed ~26 debug messages>
+
+2. Executing SYNTH pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \mini_risc_cpu
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \mini_risc_cpu
+Removed 0 unused modules.
+
+3. Executing JSON backend.
+
+4. Executing SYNTH pass.
+
+4.1. Executing OPT pass (performing simple optimizations).
+
+4.1.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+<suppressed ~78 debug messages>
+
+4.1.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mini_risc_cpu'.
+Computing hashes of 346 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 257 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 255 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+<suppressed ~273 debug messages>
+Removed a total of 91 cells.
+
+4.1.3. Executing OPT_DFF pass (perform DFF optimizations).
+Changing const-value async load to async reset on $driver$state ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$saved_write ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$saved_data ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$saved_addr ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[9] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[8] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[7] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[6] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[5] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[4] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[3] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[2] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[1] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[15] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[14] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[13] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[12] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[11] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[10] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$rf.regs[0] ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$retire_valid ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$pc ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$instr ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$fault_pc ($aldff) from module mini_risc_cpu.
+Changing const-value async load to async reset on $driver$fault_cause ($aldff) from module mini_risc_cpu.
+
+4.1.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mini_risc_cpu..
+Removed 13 unused cells and 313 unused wires.
+<suppressed ~95 debug messages>
+
+4.1.5. Rerunning OPT passes. (Removed registers in this run.)
+
+4.1.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+
+4.1.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mini_risc_cpu'.
+Computing hashes of 168 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 164 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+4.1.8. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $driver$instr ($adff) from module mini_risc_cpu (D = \imem_rdata, Q = \instr).
+Adding EN signal on $driver$rf.regs[0] ($adff) from module mini_risc_cpu (D = $160y [511:480], Q = \rf.regs [511:480]).
+Adding EN signal on $driver$fault_pc ($adff) from module mini_risc_cpu (D = $fault_pc$225, Q = \fault_pc).
+Adding EN signal on $driver$pc ($adff) from module mini_risc_cpu (D = $pc$226, Q = \pc).
+Adding EN signal on $driver$rf.regs[13] ($adff) from module mini_risc_cpu (D = $160y [95:64], Q = \rf.regs [95:64]).
+Adding EN signal on $driver$rf.regs[12] ($adff) from module mini_risc_cpu (D = $160y [127:96], Q = \rf.regs [127:96]).
+Adding EN signal on $driver$rf.regs[11] ($adff) from module mini_risc_cpu (D = $160y [159:128], Q = \rf.regs [159:128]).
+Adding EN signal on $driver$fault_cause ($adff) from module mini_risc_cpu (D = $fault_cause$224, Q = \fault_cause).
+Adding EN signal on $driver$state ($adff) from module mini_risc_cpu (D = $procmux$226_Y, Q = \state).
+Adding EN signal on $driver$saved_write ($adff) from module mini_risc_cpu (D = \mem_write, Q = \saved_write).
+Adding EN signal on $driver$saved_data ($adff) from module mini_risc_cpu (D = \b, Q = \saved_data).
+Adding EN signal on $driver$saved_addr ($adff) from module mini_risc_cpu (D = \arithmetic.result, Q = \saved_addr).
+Adding EN signal on $driver$rf.regs[9] ($adff) from module mini_risc_cpu (D = $160y [223:192], Q = \rf.regs [223:192]).
+Adding EN signal on $driver$rf.regs[10] ($adff) from module mini_risc_cpu (D = $160y [191:160], Q = \rf.regs [191:160]).
+Adding EN signal on $driver$rf.regs[8] ($adff) from module mini_risc_cpu (D = $160y [255:224], Q = \rf.regs [255:224]).
+Adding EN signal on $driver$rf.regs[7] ($adff) from module mini_risc_cpu (D = $160y [287:256], Q = \rf.regs [287:256]).
+Adding EN signal on $driver$rf.regs[6] ($adff) from module mini_risc_cpu (D = $160y [319:288], Q = \rf.regs [319:288]).
+Adding EN signal on $driver$rf.regs[5] ($adff) from module mini_risc_cpu (D = $160y [351:320], Q = \rf.regs [351:320]).
+Adding EN signal on $driver$rf.regs[4] ($adff) from module mini_risc_cpu (D = $160y [383:352], Q = \rf.regs [383:352]).
+Adding EN signal on $driver$rf.regs[3] ($adff) from module mini_risc_cpu (D = $160y [415:384], Q = \rf.regs [415:384]).
+Adding EN signal on $driver$rf.regs[2] ($adff) from module mini_risc_cpu (D = $160y [447:416], Q = \rf.regs [447:416]).
+Adding EN signal on $driver$rf.regs[1] ($adff) from module mini_risc_cpu (D = $160y [479:448], Q = \rf.regs [479:448]).
+Adding EN signal on $driver$rf.regs[15] ($adff) from module mini_risc_cpu (D = $160y [31:0], Q = \rf.regs [31:0]).
+Adding EN signal on $driver$rf.regs[14] ($adff) from module mini_risc_cpu (D = $160y [63:32], Q = \rf.regs [63:32]).
+
+4.1.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mini_risc_cpu..
+Removed 13 unused cells and 17 unused wires.
+<suppressed ~14 debug messages>
+
+4.1.10. Rerunning OPT passes. (Removed registers in this run.)
+
+4.1.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+<suppressed ~24 debug messages>
+
+4.1.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mini_risc_cpu'.
+Computing hashes of 166 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 156 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 153 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+4.1.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.1.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mini_risc_cpu..
+Removed 0 unused cells and 30 unused wires.
+<suppressed ~1 debug messages>
+
+4.1.15. Finished fast OPT passes.
+
+4.2. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.3. Executing OPT pass (performing simple optimizations).
+
+4.3.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+
+4.3.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mini_risc_cpu'.
+Computing hashes of 153 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Removed a total of 0 cells.
+
+4.3.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mini_risc_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~44 debug messages>
+
+4.3.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mini_risc_cpu.
+    Consolidated identical input bits for $mux cell $procmux$238:
+      Old ports: A=2'01, B=2'11, Y=$procmux$238_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$238_Y [1]
+      New connections: $procmux$238_Y [0] = 1'1
+    Consolidated identical input bits for $pmux cell $procmux$341:
+      Old ports: A=\pc, B={ \pc \pc }, Y=$fault_pc$225
+      New connections: $fault_pc$225 = \pc
+    New ctrl vector for $pmux cell $procmux$380: { $auto$opt_reduce.cc:137:opt_pmux$559 $99y }
+    New ctrl vector for $pmux cell $procmux$405: { $procmux$382_CMP $procmux$383_CMP $auto$opt_reduce.cc:137:opt_pmux$561 $procmux$389_CMP $procmux$390_CMP $99y }
+    Consolidated identical input bits for $mux cell $158:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$158y
+      New ports: A=1'0, B=1'1, Y=$158y [0]
+      New connections: $158y [31:1] = { $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] $158y [0] }
+    New ctrl vector for $pmux cell $procmux$415: $auto$opt_reduce.cc:137:opt_pmux$563
+    New ctrl vector for $pmux cell $procmux$444: { $auto$opt_reduce.cc:137:opt_pmux$565 $99y }
+    Consolidated identical input bits for $mux cell $procmux$7:
+      Old ports: A=2'00, B=2'11, Y=$procmux$11_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$11_Y [0]
+      New connections: $procmux$11_Y [1] = $procmux$11_Y [0]
+    Consolidated identical input bits for $mux cell $procmux$78:
+      Old ports: A=2'00, B=2'11, Y=$procmux$78_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$78_Y [0]
+      New connections: $procmux$78_Y [1] = $procmux$78_Y [0]
+  Optimizing cells in module \mini_risc_cpu.
+    Consolidated identical input bits for $demux cell $159:
+      Old ports: A=$158y, Y=$159y
+      New ports: A=$158y [0], Y={ $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] }
+      New connections: { $159y [511] $159y [479] $159y [447] $159y [415] $159y [383] $159y [351] $159y [319] $159y [287] $159y [255] $159y [223] $159y [191] $159y [159] $159y [127] $159y [95] $159y [63] $159y [31] $159y [510] $159y [478] $159y [446] $159y [414] $159y [382] $159y [350] $159y [318] $159y [286] $159y [254] $159y [222] $159y [190] $159y [158] $159y [126] $159y [94] $159y [62] $159y [30] $159y [509] $159y [477] $159y [445] $159y [413] $159y [381] $159y [349] $159y [317] $159y [285] $159y [253] $159y [221] $159y [189] $159y [157] $159y [125] $159y [93] $159y [61] $159y [29] $159y [508] $159y [476] $159y [444] $159y [412] $159y [380] $159y [348] $159y [316] $159y [284] $159y [252] $159y [220] $159y [188] $159y [156] $159y [124] $159y [92] $159y [60] $159y [28] $159y [507] $159y [475] $159y [443] $159y [411] $159y [379] $159y [347] $159y [315] $159y [283] $159y [251] $159y [219] $159y [187] $159y [155] $159y [123] $159y [91] $159y [59] $159y [27] $159y [506] $159y [474] $159y [442] $159y [410] $159y [378] $159y [346] $159y [314] $159y [282] $159y [250] $159y [218] $159y [186] $159y [154] $159y [122] $159y [90] $159y [58] $159y [26] $159y [505] $159y [473] $159y [441] $159y [409] $159y [377] $159y [345] $159y [313] $159y [281] $159y [249] $159y [217] $159y [185] $159y [153] $159y [121] $159y [89] $159y [57] $159y [25] $159y [504] $159y [472] $159y [440] $159y [408] $159y [376] $159y [344] $159y [312] $159y [280] $159y [248] $159y [216] $159y [184] $159y [152] $159y [120] $159y [88] $159y [56] $159y [24] $159y [503] $159y [471] $159y [439] $159y [407] $159y [375] $159y [343] $159y [311] $159y [279] $159y [247] $159y [215] $159y [183] $159y [151] $159y [119] $159y [87] $159y [55] $159y [23] $159y [502] $159y [470] $159y [438] $159y [406] $159y [374] $159y [342] $159y [310] $159y [278] $159y [246] $159y [214] $159y [182] $159y [150] $159y [118] $159y [86] $159y [54] $159y [22] $159y [501] $159y [469] $159y [437] $159y [405] $159y [373] $159y [341] $159y [309] $159y [277] $159y [245] $159y [213] $159y [181] $159y [149] $159y [117] $159y [85] $159y [53] $159y [21] $159y [500] $159y [468] $159y [436] $159y [404] $159y [372] $159y [340] $159y [308] $159y [276] $159y [244] $159y [212] $159y [180] $159y [148] $159y [116] $159y [84] $159y [52] $159y [20] $159y [499] $159y [467] $159y [435] $159y [403] $159y [371] $159y [339] $159y [307] $159y [275] $159y [243] $159y [211] $159y [179] $159y [147] $159y [115] $159y [83] $159y [51] $159y [19] $159y [498] $159y [466] $159y [434] $159y [402] $159y [370] $159y [338] $159y [306] $159y [274] $159y [242] $159y [210] $159y [178] $159y [146] $159y [114] $159y [82] $159y [50] $159y [18] $159y [497] $159y [465] $159y [433] $159y [401] $159y [369] $159y [337] $159y [305] $159y [273] $159y [241] $159y [209] $159y [177] $159y [145] $159y [113] $159y [81] $159y [49] $159y [17] $159y [496] $159y [464] $159y [432] $159y [400] $159y [368] $159y [336] $159y [304] $159y [272] $159y [240] $159y [208] $159y [176] $159y [144] $159y [112] $159y [80] $159y [48] $159y [16] $159y [495] $159y [463] $159y [431] $159y [399] $159y [367] $159y [335] $159y [303] $159y [271] $159y [239] $159y [207] $159y [175] $159y [143] $159y [111] $159y [79] $159y [47] $159y [15] $159y [494] $159y [462] $159y [430] $159y [398] $159y [366] $159y [334] $159y [302] $159y [270] $159y [238] $159y [206] $159y [174] $159y [142] $159y [110] $159y [78] $159y [46] $159y [14] $159y [493] $159y [461] $159y [429] $159y [397] $159y [365] $159y [333] $159y [301] $159y [269] $159y [237] $159y [205] $159y [173] $159y [141] $159y [109] $159y [77] $159y [45] $159y [13] $159y [492] $159y [460] $159y [428] $159y [396] $159y [364] $159y [332] $159y [300] $159y [268] $159y [236] $159y [204] $159y [172] $159y [140] $159y [108] $159y [76] $159y [44] $159y [12] $159y [491] $159y [459] $159y [427] $159y [395] $159y [363] $159y [331] $159y [299] $159y [267] $159y [235] $159y [203] $159y [171] $159y [139] $159y [107] $159y [75] $159y [43] $159y [11] $159y [490] $159y [458] $159y [426] $159y [394] $159y [362] $159y [330] $159y [298] $159y [266] $159y [234] $159y [202] $159y [170] $159y [138] $159y [106] $159y [74] $159y [42] $159y [10] $159y [489] $159y [457] $159y [425] $159y [393] $159y [361] $159y [329] $159y [297] $159y [265] $159y [233] $159y [201] $159y [169] $159y [137] $159y [105] $159y [73] $159y [41] $159y [9] $159y [488] $159y [456] $159y [424] $159y [392] $159y [360] $159y [328] $159y [296] $159y [264] $159y [232] $159y [200] $159y [168] $159y [136] $159y [104] $159y [72] $159y [40] $159y [8] $159y [487] $159y [455] $159y [423] $159y [391] $159y [359] $159y [327] $159y [295] $159y [263] $159y [231] $159y [199] $159y [167] $159y [135] $159y [103] $159y [71] $159y [39] $159y [7] $159y [486] $159y [454] $159y [422] $159y [390] $159y [358] $159y [326] $159y [294] $159y [262] $159y [230] $159y [198] $159y [166] $159y [134] $159y [102] $159y [70] $159y [38] $159y [6] $159y [485] $159y [453] $159y [421] $159y [389] $159y [357] $159y [325] $159y [293] $159y [261] $159y [229] $159y [197] $159y [165] $159y [133] $159y [101] $159y [69] $159y [37] $159y [5] $159y [484] $159y [452] $159y [420] $159y [388] $159y [356] $159y [324] $159y [292] $159y [260] $159y [228] $159y [196] $159y [164] $159y [132] $159y [100] $159y [68] $159y [36] $159y [4] $159y [483] $159y [451] $159y [419] $159y [387] $159y [355] $159y [323] $159y [291] $159y [259] $159y [227] $159y [195] $159y [163] $159y [131] $159y [99] $159y [67] $159y [35] $159y [3] $159y [482] $159y [450] $159y [418] $159y [386] $159y [354] $159y [322] $159y [290] $159y [258] $159y [226] $159y [194] $159y [162] $159y [130] $159y [98] $159y [66] $159y [34] $159y [2] $159y [481] $159y [449] $159y [417] $159y [385] $159y [353] $159y [321] $159y [289] $159y [257] $159y [225] $159y [193] $159y [161] $159y [129] $159y [97] $159y [65] $159y [33] $159y [1] } = { $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] $159y [480] $159y [448] $159y [416] $159y [384] $159y [352] $159y [320] $159y [288] $159y [256] $159y [224] $159y [192] $159y [160] $159y [128] $159y [96] $159y [64] $159y [32] $159y [0] }
+  Optimizing cells in module \mini_risc_cpu.
+Performed a total of 10 changes.
+
+4.3.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mini_risc_cpu'.
+Computing hashes of 156 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Removed a total of 0 cells.
+
+4.3.6. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $pmux $procmux$358 in front of them:
+        $69
+        $67
+
+4.3.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mini_risc_cpu..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~3 debug messages>
+
+4.3.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+<suppressed ~6 debug messages>
+
+4.3.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.3.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mini_risc_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~37 debug messages>
+
+4.3.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mini_risc_cpu.
+    New ctrl vector for $pmux cell $procmux$358: { $procmux$359_CMP $procmux$360_CMP $procmux$361_CMP $procmux$362_CMP $procmux$363_CMP $procmux$364_CMP $procmux$365_CMP $auto$opt_reduce.cc:137:opt_pmux$572 }
+  Optimizing cells in module \mini_risc_cpu.
+Performed a total of 1 changes.
+
+4.3.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mini_risc_cpu'.
+Computing hashes of 153 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Removed a total of 0 cells.
+
+4.3.14. Executing OPT_SHARE pass.
+
+4.3.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mini_risc_cpu..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~1 debug messages>
+
+4.3.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+
+4.3.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.3.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mini_risc_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~37 debug messages>
+
+4.3.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mini_risc_cpu.
+Performed a total of 0 changes.
+
+4.3.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mini_risc_cpu'.
+Computing hashes of 153 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Removed a total of 0 cells.
+
+4.3.22. Executing OPT_SHARE pass.
+
+4.3.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mini_risc_cpu..
+
+4.3.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+
+4.3.26. Finished fast OPT passes. (There is nothing left to do.)
+
+4.4. Executing TECHMAP pass (map to technology primitives).
+
+4.4.1. Executing Verilog-2005 frontend: /share/techmap.v
+Parsing Verilog input from `/share/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+4.4.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $mux.
+Running "alumacc" on wrapper $extern:wrap:$neg:Y_WIDTH=32:A_WIDTH=32:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$neg:Y_WIDTH=32:A_WIDTH=32:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$neg:Y_WIDTH=32:A_WIDTH=32:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Running "alumacc" on wrapper $extern:wrap:$le:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$le:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$le:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$gt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$gt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$gt:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=32:B_SIGNED=0:B_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=32:B_SIGNED=0:B_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:A_SIGNED=0:A_WIDTH=32:B_SIGNED=0:B_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $xor.
+Running "alumacc" on wrapper $extern:wrap:$lt:A_SIGNED=1:A_WIDTH=32:B_SIGNED=1:B_WIDTH=32:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$lt:A_SIGNED=1:A_WIDTH=32:B_SIGNED=1:B_WIDTH=32:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$lt:A_SIGNED=1:A_WIDTH=32:B_SIGNED=1:B_WIDTH=32:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$constmap:4621fcf06a436d1e2a4080e2ed9866a7d07a6e07$paramod$335cfd09f1afa8139c4aafcbbe5f361887b79c5e\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.
+Using template $paramod$constmap:4621fcf06a436d1e2a4080e2ed9866a7d07a6e07$paramod$feecc7a0dbd012970970f2858f15e786e251f677\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shr.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=32:B_SIGNED=0:B_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=32:B_SIGNED=0:B_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=32:B_SIGNED=0:B_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $bmux.
+Running "alumacc" on wrapper $extern:wrap:$ge:A_SIGNED=1:A_WIDTH=5:B_SIGNED=1:B_WIDTH=5:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$ge:A_SIGNED=1:A_WIDTH=5:B_SIGNED=1:B_WIDTH=5:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$ge:A_SIGNED=1:A_WIDTH=5:B_SIGNED=1:B_WIDTH=5:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$b3b6ac92d800c6f07aa48f510f923d86a674e5a7\_90_demux for cells of type $demux.
+Using extmapper simplemap for cells of type $bwmux.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $pmux.
+Using template $paramod$2653f68ddb8eab7b1907b4a20767b72a824a7a36\_90_alu for cells of type $alu.
+Using template $paramod$fbc7873bff55778c0b3173955b7e4bce1d9d6834\_90_alu for cells of type $alu.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using template $paramod$c6baa65225090ac0a120feab1b920965244aa496\_90_alu for cells of type $alu.
+Using template $paramod$f47943a1f8520b2e9fab25220c0025f020e7013b\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod$63301a5e78ceb1f2c17a4ac1894f292ed5701c1f\_90_demux for cells of type $demux.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using template $paramod$5d1d2614b24accd0f9d06c4779fd9ef771faf494\_90_demux for cells of type $demux.
+No more expansions possible.
+<suppressed ~2421 debug messages>
+
+4.5. Executing OPT pass (performing simple optimizations).
+
+4.5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+<suppressed ~3779 debug messages>
+
+4.5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mini_risc_cpu'.
+Computing hashes of 4835 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 4716 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 4686 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 4682 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 4681 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 4680 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 4679 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+<suppressed ~468 debug messages>
+Removed a total of 156 cells.
+
+4.5.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$1456 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [511]).
+Adding EN signal on $auto$ff.cc:337:slice$1290 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [95]).
+Adding EN signal on $auto$ff.cc:337:slice$810 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [479]).
+Adding EN signal on $auto$ff.cc:337:slice$778 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [31]).
+Adding EN signal on $auto$ff.cc:337:slice$1258 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [127]).
+Adding EN signal on $auto$ff.cc:337:slice$1226 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [159]).
+Adding EN signal on $auto$ff.cc:337:slice$746 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [63]).
+Adding EN signal on $auto$ff.cc:337:slice$842 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [447]).
+Adding EN signal on $auto$ff.cc:337:slice$1098 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [223]).
+Adding EN signal on $auto$ff.cc:337:slice$1066 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [191]).
+Adding EN signal on $auto$ff.cc:337:slice$1034 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [255]).
+Adding EN signal on $auto$ff.cc:337:slice$1002 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [287]).
+Adding EN signal on $auto$ff.cc:337:slice$970 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [319]).
+Adding EN signal on $auto$ff.cc:337:slice$938 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [351]).
+Adding EN signal on $auto$ff.cc:337:slice$906 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [383]).
+Adding EN signal on $auto$ff.cc:337:slice$874 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [31], Q = \rf.regs [415]).
+Adding EN signal on $auto$ff.cc:337:slice$715 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [32]).
+Adding EN signal on $auto$ff.cc:337:slice$716 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [33]).
+Adding EN signal on $auto$ff.cc:337:slice$717 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [34]).
+Adding EN signal on $auto$ff.cc:337:slice$718 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [35]).
+Adding EN signal on $auto$ff.cc:337:slice$719 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [36]).
+Adding EN signal on $auto$ff.cc:337:slice$720 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [37]).
+Adding EN signal on $auto$ff.cc:337:slice$721 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [38]).
+Adding EN signal on $auto$ff.cc:337:slice$722 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [39]).
+Adding EN signal on $auto$ff.cc:337:slice$723 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [40]).
+Adding EN signal on $auto$ff.cc:337:slice$724 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [41]).
+Adding EN signal on $auto$ff.cc:337:slice$725 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [42]).
+Adding EN signal on $auto$ff.cc:337:slice$726 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [43]).
+Adding EN signal on $auto$ff.cc:337:slice$727 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [44]).
+Adding EN signal on $auto$ff.cc:337:slice$728 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [45]).
+Adding EN signal on $auto$ff.cc:337:slice$729 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [46]).
+Adding EN signal on $auto$ff.cc:337:slice$730 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [47]).
+Adding EN signal on $auto$ff.cc:337:slice$731 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [48]).
+Adding EN signal on $auto$ff.cc:337:slice$732 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [49]).
+Adding EN signal on $auto$ff.cc:337:slice$733 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [50]).
+Adding EN signal on $auto$ff.cc:337:slice$734 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [51]).
+Adding EN signal on $auto$ff.cc:337:slice$735 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [52]).
+Adding EN signal on $auto$ff.cc:337:slice$736 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [53]).
+Adding EN signal on $auto$ff.cc:337:slice$737 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [54]).
+Adding EN signal on $auto$ff.cc:337:slice$738 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [55]).
+Adding EN signal on $auto$ff.cc:337:slice$739 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [56]).
+Adding EN signal on $auto$ff.cc:337:slice$740 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [57]).
+Adding EN signal on $auto$ff.cc:337:slice$741 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [58]).
+Adding EN signal on $auto$ff.cc:337:slice$742 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [59]).
+Adding EN signal on $auto$ff.cc:337:slice$743 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [60]).
+Adding EN signal on $auto$ff.cc:337:slice$744 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [61]).
+Adding EN signal on $auto$ff.cc:337:slice$745 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [62]).
+Adding EN signal on $auto$ff.cc:337:slice$747 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [0]).
+Adding EN signal on $auto$ff.cc:337:slice$748 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [1]).
+Adding EN signal on $auto$ff.cc:337:slice$749 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [2]).
+Adding EN signal on $auto$ff.cc:337:slice$750 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [3]).
+Adding EN signal on $auto$ff.cc:337:slice$751 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [4]).
+Adding EN signal on $auto$ff.cc:337:slice$752 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [5]).
+Adding EN signal on $auto$ff.cc:337:slice$753 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [6]).
+Adding EN signal on $auto$ff.cc:337:slice$754 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [7]).
+Adding EN signal on $auto$ff.cc:337:slice$755 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [8]).
+Adding EN signal on $auto$ff.cc:337:slice$756 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [9]).
+Adding EN signal on $auto$ff.cc:337:slice$757 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [10]).
+Adding EN signal on $auto$ff.cc:337:slice$758 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [11]).
+Adding EN signal on $auto$ff.cc:337:slice$759 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [12]).
+Adding EN signal on $auto$ff.cc:337:slice$760 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [13]).
+Adding EN signal on $auto$ff.cc:337:slice$761 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [14]).
+Adding EN signal on $auto$ff.cc:337:slice$762 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [15]).
+Adding EN signal on $auto$ff.cc:337:slice$763 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [16]).
+Adding EN signal on $auto$ff.cc:337:slice$764 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [17]).
+Adding EN signal on $auto$ff.cc:337:slice$765 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [18]).
+Adding EN signal on $auto$ff.cc:337:slice$766 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [19]).
+Adding EN signal on $auto$ff.cc:337:slice$767 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [20]).
+Adding EN signal on $auto$ff.cc:337:slice$768 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [21]).
+Adding EN signal on $auto$ff.cc:337:slice$769 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [22]).
+Adding EN signal on $auto$ff.cc:337:slice$770 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [23]).
+Adding EN signal on $auto$ff.cc:337:slice$771 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [24]).
+Adding EN signal on $auto$ff.cc:337:slice$772 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [25]).
+Adding EN signal on $auto$ff.cc:337:slice$773 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [26]).
+Adding EN signal on $auto$ff.cc:337:slice$774 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [27]).
+Adding EN signal on $auto$ff.cc:337:slice$775 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [28]).
+Adding EN signal on $auto$ff.cc:337:slice$776 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [29]).
+Adding EN signal on $auto$ff.cc:337:slice$777 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [30]).
+Adding EN signal on $auto$ff.cc:337:slice$779 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [448]).
+Adding EN signal on $auto$ff.cc:337:slice$780 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [449]).
+Adding EN signal on $auto$ff.cc:337:slice$781 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [450]).
+Adding EN signal on $auto$ff.cc:337:slice$782 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [451]).
+Adding EN signal on $auto$ff.cc:337:slice$783 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [452]).
+Adding EN signal on $auto$ff.cc:337:slice$784 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [453]).
+Adding EN signal on $auto$ff.cc:337:slice$785 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [454]).
+Adding EN signal on $auto$ff.cc:337:slice$786 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [455]).
+Adding EN signal on $auto$ff.cc:337:slice$787 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [456]).
+Adding EN signal on $auto$ff.cc:337:slice$788 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [457]).
+Adding EN signal on $auto$ff.cc:337:slice$789 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [458]).
+Adding EN signal on $auto$ff.cc:337:slice$790 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [459]).
+Adding EN signal on $auto$ff.cc:337:slice$791 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [460]).
+Adding EN signal on $auto$ff.cc:337:slice$792 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [461]).
+Adding EN signal on $auto$ff.cc:337:slice$793 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [462]).
+Adding EN signal on $auto$ff.cc:337:slice$794 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [463]).
+Adding EN signal on $auto$ff.cc:337:slice$795 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [464]).
+Adding EN signal on $auto$ff.cc:337:slice$796 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [465]).
+Adding EN signal on $auto$ff.cc:337:slice$797 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [466]).
+Adding EN signal on $auto$ff.cc:337:slice$798 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [467]).
+Adding EN signal on $auto$ff.cc:337:slice$799 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [468]).
+Adding EN signal on $auto$ff.cc:337:slice$800 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [469]).
+Adding EN signal on $auto$ff.cc:337:slice$801 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [470]).
+Adding EN signal on $auto$ff.cc:337:slice$802 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [471]).
+Adding EN signal on $auto$ff.cc:337:slice$803 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [472]).
+Adding EN signal on $auto$ff.cc:337:slice$804 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [473]).
+Adding EN signal on $auto$ff.cc:337:slice$805 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [474]).
+Adding EN signal on $auto$ff.cc:337:slice$806 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [475]).
+Adding EN signal on $auto$ff.cc:337:slice$807 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [476]).
+Adding EN signal on $auto$ff.cc:337:slice$808 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [477]).
+Adding EN signal on $auto$ff.cc:337:slice$809 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [478]).
+Adding EN signal on $auto$ff.cc:337:slice$811 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [416]).
+Adding EN signal on $auto$ff.cc:337:slice$812 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [417]).
+Adding EN signal on $auto$ff.cc:337:slice$813 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [418]).
+Adding EN signal on $auto$ff.cc:337:slice$814 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [419]).
+Adding EN signal on $auto$ff.cc:337:slice$815 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [420]).
+Adding EN signal on $auto$ff.cc:337:slice$816 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [421]).
+Adding EN signal on $auto$ff.cc:337:slice$817 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [422]).
+Adding EN signal on $auto$ff.cc:337:slice$818 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [423]).
+Adding EN signal on $auto$ff.cc:337:slice$819 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [424]).
+Adding EN signal on $auto$ff.cc:337:slice$820 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [425]).
+Adding EN signal on $auto$ff.cc:337:slice$821 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [426]).
+Adding EN signal on $auto$ff.cc:337:slice$822 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [427]).
+Adding EN signal on $auto$ff.cc:337:slice$823 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [428]).
+Adding EN signal on $auto$ff.cc:337:slice$824 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [429]).
+Adding EN signal on $auto$ff.cc:337:slice$825 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [430]).
+Adding EN signal on $auto$ff.cc:337:slice$826 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [431]).
+Adding EN signal on $auto$ff.cc:337:slice$827 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [432]).
+Adding EN signal on $auto$ff.cc:337:slice$828 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [433]).
+Adding EN signal on $auto$ff.cc:337:slice$829 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [434]).
+Adding EN signal on $auto$ff.cc:337:slice$830 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [435]).
+Adding EN signal on $auto$ff.cc:337:slice$831 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [436]).
+Adding EN signal on $auto$ff.cc:337:slice$832 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [437]).
+Adding EN signal on $auto$ff.cc:337:slice$833 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [438]).
+Adding EN signal on $auto$ff.cc:337:slice$834 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [439]).
+Adding EN signal on $auto$ff.cc:337:slice$835 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [440]).
+Adding EN signal on $auto$ff.cc:337:slice$836 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [441]).
+Adding EN signal on $auto$ff.cc:337:slice$837 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [442]).
+Adding EN signal on $auto$ff.cc:337:slice$838 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [443]).
+Adding EN signal on $auto$ff.cc:337:slice$839 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [444]).
+Adding EN signal on $auto$ff.cc:337:slice$840 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [445]).
+Adding EN signal on $auto$ff.cc:337:slice$841 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [446]).
+Adding EN signal on $auto$ff.cc:337:slice$843 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [384]).
+Adding EN signal on $auto$ff.cc:337:slice$844 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [385]).
+Adding EN signal on $auto$ff.cc:337:slice$845 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [386]).
+Adding EN signal on $auto$ff.cc:337:slice$846 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [387]).
+Adding EN signal on $auto$ff.cc:337:slice$847 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [388]).
+Adding EN signal on $auto$ff.cc:337:slice$848 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [389]).
+Adding EN signal on $auto$ff.cc:337:slice$849 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [390]).
+Adding EN signal on $auto$ff.cc:337:slice$850 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [391]).
+Adding EN signal on $auto$ff.cc:337:slice$851 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [392]).
+Adding EN signal on $auto$ff.cc:337:slice$852 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [393]).
+Adding EN signal on $auto$ff.cc:337:slice$853 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [394]).
+Adding EN signal on $auto$ff.cc:337:slice$854 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [395]).
+Adding EN signal on $auto$ff.cc:337:slice$855 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [396]).
+Adding EN signal on $auto$ff.cc:337:slice$856 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [397]).
+Adding EN signal on $auto$ff.cc:337:slice$857 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [398]).
+Adding EN signal on $auto$ff.cc:337:slice$858 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [399]).
+Adding EN signal on $auto$ff.cc:337:slice$859 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [400]).
+Adding EN signal on $auto$ff.cc:337:slice$860 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [401]).
+Adding EN signal on $auto$ff.cc:337:slice$861 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [402]).
+Adding EN signal on $auto$ff.cc:337:slice$862 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [403]).
+Adding EN signal on $auto$ff.cc:337:slice$863 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [404]).
+Adding EN signal on $auto$ff.cc:337:slice$864 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [405]).
+Adding EN signal on $auto$ff.cc:337:slice$865 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [406]).
+Adding EN signal on $auto$ff.cc:337:slice$866 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [407]).
+Adding EN signal on $auto$ff.cc:337:slice$867 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [408]).
+Adding EN signal on $auto$ff.cc:337:slice$868 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [409]).
+Adding EN signal on $auto$ff.cc:337:slice$869 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [410]).
+Adding EN signal on $auto$ff.cc:337:slice$870 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [411]).
+Adding EN signal on $auto$ff.cc:337:slice$871 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [412]).
+Adding EN signal on $auto$ff.cc:337:slice$872 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [413]).
+Adding EN signal on $auto$ff.cc:337:slice$873 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [414]).
+Adding EN signal on $auto$ff.cc:337:slice$875 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [352]).
+Adding EN signal on $auto$ff.cc:337:slice$876 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [353]).
+Adding EN signal on $auto$ff.cc:337:slice$877 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [354]).
+Adding EN signal on $auto$ff.cc:337:slice$878 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [355]).
+Adding EN signal on $auto$ff.cc:337:slice$879 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [356]).
+Adding EN signal on $auto$ff.cc:337:slice$880 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [357]).
+Adding EN signal on $auto$ff.cc:337:slice$881 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [358]).
+Adding EN signal on $auto$ff.cc:337:slice$882 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [359]).
+Adding EN signal on $auto$ff.cc:337:slice$883 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [360]).
+Adding EN signal on $auto$ff.cc:337:slice$884 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [361]).
+Adding EN signal on $auto$ff.cc:337:slice$885 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [362]).
+Adding EN signal on $auto$ff.cc:337:slice$886 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [363]).
+Adding EN signal on $auto$ff.cc:337:slice$887 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [364]).
+Adding EN signal on $auto$ff.cc:337:slice$888 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [365]).
+Adding EN signal on $auto$ff.cc:337:slice$889 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [366]).
+Adding EN signal on $auto$ff.cc:337:slice$890 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [367]).
+Adding EN signal on $auto$ff.cc:337:slice$891 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [368]).
+Adding EN signal on $auto$ff.cc:337:slice$892 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [369]).
+Adding EN signal on $auto$ff.cc:337:slice$893 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [370]).
+Adding EN signal on $auto$ff.cc:337:slice$894 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [371]).
+Adding EN signal on $auto$ff.cc:337:slice$895 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [372]).
+Adding EN signal on $auto$ff.cc:337:slice$896 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [373]).
+Adding EN signal on $auto$ff.cc:337:slice$897 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [374]).
+Adding EN signal on $auto$ff.cc:337:slice$898 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [375]).
+Adding EN signal on $auto$ff.cc:337:slice$899 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [376]).
+Adding EN signal on $auto$ff.cc:337:slice$900 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [377]).
+Adding EN signal on $auto$ff.cc:337:slice$901 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [378]).
+Adding EN signal on $auto$ff.cc:337:slice$902 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [379]).
+Adding EN signal on $auto$ff.cc:337:slice$903 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [380]).
+Adding EN signal on $auto$ff.cc:337:slice$904 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [381]).
+Adding EN signal on $auto$ff.cc:337:slice$905 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [382]).
+Adding EN signal on $auto$ff.cc:337:slice$907 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [320]).
+Adding EN signal on $auto$ff.cc:337:slice$908 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [321]).
+Adding EN signal on $auto$ff.cc:337:slice$909 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [322]).
+Adding EN signal on $auto$ff.cc:337:slice$910 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [323]).
+Adding EN signal on $auto$ff.cc:337:slice$911 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [324]).
+Adding EN signal on $auto$ff.cc:337:slice$912 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [325]).
+Adding EN signal on $auto$ff.cc:337:slice$913 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [326]).
+Adding EN signal on $auto$ff.cc:337:slice$914 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [327]).
+Adding EN signal on $auto$ff.cc:337:slice$915 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [328]).
+Adding EN signal on $auto$ff.cc:337:slice$916 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [329]).
+Adding EN signal on $auto$ff.cc:337:slice$917 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [330]).
+Adding EN signal on $auto$ff.cc:337:slice$918 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [331]).
+Adding EN signal on $auto$ff.cc:337:slice$919 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [332]).
+Adding EN signal on $auto$ff.cc:337:slice$920 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [333]).
+Adding EN signal on $auto$ff.cc:337:slice$921 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [334]).
+Adding EN signal on $auto$ff.cc:337:slice$922 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [335]).
+Adding EN signal on $auto$ff.cc:337:slice$923 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [336]).
+Adding EN signal on $auto$ff.cc:337:slice$924 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [337]).
+Adding EN signal on $auto$ff.cc:337:slice$925 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [338]).
+Adding EN signal on $auto$ff.cc:337:slice$926 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [339]).
+Adding EN signal on $auto$ff.cc:337:slice$927 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [340]).
+Adding EN signal on $auto$ff.cc:337:slice$928 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [341]).
+Adding EN signal on $auto$ff.cc:337:slice$929 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [342]).
+Adding EN signal on $auto$ff.cc:337:slice$930 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [343]).
+Adding EN signal on $auto$ff.cc:337:slice$931 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [344]).
+Adding EN signal on $auto$ff.cc:337:slice$932 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [345]).
+Adding EN signal on $auto$ff.cc:337:slice$933 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [346]).
+Adding EN signal on $auto$ff.cc:337:slice$934 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [347]).
+Adding EN signal on $auto$ff.cc:337:slice$935 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [348]).
+Adding EN signal on $auto$ff.cc:337:slice$936 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [349]).
+Adding EN signal on $auto$ff.cc:337:slice$937 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [350]).
+Adding EN signal on $auto$ff.cc:337:slice$939 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [288]).
+Adding EN signal on $auto$ff.cc:337:slice$940 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [289]).
+Adding EN signal on $auto$ff.cc:337:slice$941 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [290]).
+Adding EN signal on $auto$ff.cc:337:slice$942 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [291]).
+Adding EN signal on $auto$ff.cc:337:slice$943 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [292]).
+Adding EN signal on $auto$ff.cc:337:slice$944 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [293]).
+Adding EN signal on $auto$ff.cc:337:slice$945 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [294]).
+Adding EN signal on $auto$ff.cc:337:slice$946 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [295]).
+Adding EN signal on $auto$ff.cc:337:slice$947 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [296]).
+Adding EN signal on $auto$ff.cc:337:slice$948 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [297]).
+Adding EN signal on $auto$ff.cc:337:slice$949 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [298]).
+Adding EN signal on $auto$ff.cc:337:slice$950 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [299]).
+Adding EN signal on $auto$ff.cc:337:slice$951 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [300]).
+Adding EN signal on $auto$ff.cc:337:slice$952 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [301]).
+Adding EN signal on $auto$ff.cc:337:slice$953 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [302]).
+Adding EN signal on $auto$ff.cc:337:slice$954 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [303]).
+Adding EN signal on $auto$ff.cc:337:slice$955 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [304]).
+Adding EN signal on $auto$ff.cc:337:slice$956 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [305]).
+Adding EN signal on $auto$ff.cc:337:slice$957 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [306]).
+Adding EN signal on $auto$ff.cc:337:slice$958 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [307]).
+Adding EN signal on $auto$ff.cc:337:slice$959 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [308]).
+Adding EN signal on $auto$ff.cc:337:slice$960 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [309]).
+Adding EN signal on $auto$ff.cc:337:slice$961 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [310]).
+Adding EN signal on $auto$ff.cc:337:slice$962 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [311]).
+Adding EN signal on $auto$ff.cc:337:slice$963 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [312]).
+Adding EN signal on $auto$ff.cc:337:slice$964 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [313]).
+Adding EN signal on $auto$ff.cc:337:slice$965 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [314]).
+Adding EN signal on $auto$ff.cc:337:slice$966 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [315]).
+Adding EN signal on $auto$ff.cc:337:slice$967 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [316]).
+Adding EN signal on $auto$ff.cc:337:slice$968 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [317]).
+Adding EN signal on $auto$ff.cc:337:slice$969 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [318]).
+Adding EN signal on $auto$ff.cc:337:slice$971 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [256]).
+Adding EN signal on $auto$ff.cc:337:slice$972 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [257]).
+Adding EN signal on $auto$ff.cc:337:slice$973 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [258]).
+Adding EN signal on $auto$ff.cc:337:slice$974 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [259]).
+Adding EN signal on $auto$ff.cc:337:slice$975 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [260]).
+Adding EN signal on $auto$ff.cc:337:slice$976 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [261]).
+Adding EN signal on $auto$ff.cc:337:slice$977 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [262]).
+Adding EN signal on $auto$ff.cc:337:slice$978 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [263]).
+Adding EN signal on $auto$ff.cc:337:slice$979 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [264]).
+Adding EN signal on $auto$ff.cc:337:slice$980 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [265]).
+Adding EN signal on $auto$ff.cc:337:slice$981 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [266]).
+Adding EN signal on $auto$ff.cc:337:slice$982 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [267]).
+Adding EN signal on $auto$ff.cc:337:slice$983 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [268]).
+Adding EN signal on $auto$ff.cc:337:slice$984 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [269]).
+Adding EN signal on $auto$ff.cc:337:slice$985 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [270]).
+Adding EN signal on $auto$ff.cc:337:slice$986 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [271]).
+Adding EN signal on $auto$ff.cc:337:slice$987 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [272]).
+Adding EN signal on $auto$ff.cc:337:slice$988 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [273]).
+Adding EN signal on $auto$ff.cc:337:slice$989 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [274]).
+Adding EN signal on $auto$ff.cc:337:slice$990 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [275]).
+Adding EN signal on $auto$ff.cc:337:slice$991 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [276]).
+Adding EN signal on $auto$ff.cc:337:slice$992 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [277]).
+Adding EN signal on $auto$ff.cc:337:slice$993 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [278]).
+Adding EN signal on $auto$ff.cc:337:slice$994 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [279]).
+Adding EN signal on $auto$ff.cc:337:slice$995 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [280]).
+Adding EN signal on $auto$ff.cc:337:slice$996 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [281]).
+Adding EN signal on $auto$ff.cc:337:slice$997 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [282]).
+Adding EN signal on $auto$ff.cc:337:slice$998 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [283]).
+Adding EN signal on $auto$ff.cc:337:slice$999 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [284]).
+Adding EN signal on $auto$ff.cc:337:slice$1000 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [285]).
+Adding EN signal on $auto$ff.cc:337:slice$1001 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [286]).
+Adding EN signal on $auto$ff.cc:337:slice$1003 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [224]).
+Adding EN signal on $auto$ff.cc:337:slice$1004 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [225]).
+Adding EN signal on $auto$ff.cc:337:slice$1005 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [226]).
+Adding EN signal on $auto$ff.cc:337:slice$1006 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [227]).
+Adding EN signal on $auto$ff.cc:337:slice$1007 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [228]).
+Adding EN signal on $auto$ff.cc:337:slice$1008 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [229]).
+Adding EN signal on $auto$ff.cc:337:slice$1009 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [230]).
+Adding EN signal on $auto$ff.cc:337:slice$1010 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [231]).
+Adding EN signal on $auto$ff.cc:337:slice$1011 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [232]).
+Adding EN signal on $auto$ff.cc:337:slice$1012 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [233]).
+Adding EN signal on $auto$ff.cc:337:slice$1013 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [234]).
+Adding EN signal on $auto$ff.cc:337:slice$1014 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [235]).
+Adding EN signal on $auto$ff.cc:337:slice$1015 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [236]).
+Adding EN signal on $auto$ff.cc:337:slice$1016 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [237]).
+Adding EN signal on $auto$ff.cc:337:slice$1017 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [238]).
+Adding EN signal on $auto$ff.cc:337:slice$1018 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [239]).
+Adding EN signal on $auto$ff.cc:337:slice$1019 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [240]).
+Adding EN signal on $auto$ff.cc:337:slice$1020 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [241]).
+Adding EN signal on $auto$ff.cc:337:slice$1021 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [242]).
+Adding EN signal on $auto$ff.cc:337:slice$1022 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [243]).
+Adding EN signal on $auto$ff.cc:337:slice$1023 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [244]).
+Adding EN signal on $auto$ff.cc:337:slice$1024 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [245]).
+Adding EN signal on $auto$ff.cc:337:slice$1025 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [246]).
+Adding EN signal on $auto$ff.cc:337:slice$1026 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [247]).
+Adding EN signal on $auto$ff.cc:337:slice$1027 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [248]).
+Adding EN signal on $auto$ff.cc:337:slice$1028 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [249]).
+Adding EN signal on $auto$ff.cc:337:slice$1029 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [250]).
+Adding EN signal on $auto$ff.cc:337:slice$1030 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [251]).
+Adding EN signal on $auto$ff.cc:337:slice$1031 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [252]).
+Adding EN signal on $auto$ff.cc:337:slice$1032 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [253]).
+Adding EN signal on $auto$ff.cc:337:slice$1033 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [254]).
+Adding EN signal on $auto$ff.cc:337:slice$1035 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [160]).
+Adding EN signal on $auto$ff.cc:337:slice$1036 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [161]).
+Adding EN signal on $auto$ff.cc:337:slice$1037 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [162]).
+Adding EN signal on $auto$ff.cc:337:slice$1038 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [163]).
+Adding EN signal on $auto$ff.cc:337:slice$1039 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [164]).
+Adding EN signal on $auto$ff.cc:337:slice$1040 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [165]).
+Adding EN signal on $auto$ff.cc:337:slice$1041 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [166]).
+Adding EN signal on $auto$ff.cc:337:slice$1042 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [167]).
+Adding EN signal on $auto$ff.cc:337:slice$1043 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [168]).
+Adding EN signal on $auto$ff.cc:337:slice$1044 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [169]).
+Adding EN signal on $auto$ff.cc:337:slice$1045 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [170]).
+Adding EN signal on $auto$ff.cc:337:slice$1046 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [171]).
+Adding EN signal on $auto$ff.cc:337:slice$1047 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [172]).
+Adding EN signal on $auto$ff.cc:337:slice$1048 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [173]).
+Adding EN signal on $auto$ff.cc:337:slice$1049 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [174]).
+Adding EN signal on $auto$ff.cc:337:slice$1050 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [175]).
+Adding EN signal on $auto$ff.cc:337:slice$1051 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [176]).
+Adding EN signal on $auto$ff.cc:337:slice$1052 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [177]).
+Adding EN signal on $auto$ff.cc:337:slice$1053 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [178]).
+Adding EN signal on $auto$ff.cc:337:slice$1054 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [179]).
+Adding EN signal on $auto$ff.cc:337:slice$1055 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [180]).
+Adding EN signal on $auto$ff.cc:337:slice$1056 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [181]).
+Adding EN signal on $auto$ff.cc:337:slice$1057 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [182]).
+Adding EN signal on $auto$ff.cc:337:slice$1058 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [183]).
+Adding EN signal on $auto$ff.cc:337:slice$1059 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [184]).
+Adding EN signal on $auto$ff.cc:337:slice$1060 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [185]).
+Adding EN signal on $auto$ff.cc:337:slice$1061 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [186]).
+Adding EN signal on $auto$ff.cc:337:slice$1062 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [187]).
+Adding EN signal on $auto$ff.cc:337:slice$1063 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [188]).
+Adding EN signal on $auto$ff.cc:337:slice$1064 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [189]).
+Adding EN signal on $auto$ff.cc:337:slice$1065 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [190]).
+Adding EN signal on $auto$ff.cc:337:slice$1067 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [192]).
+Adding EN signal on $auto$ff.cc:337:slice$1068 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [193]).
+Adding EN signal on $auto$ff.cc:337:slice$1069 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [194]).
+Adding EN signal on $auto$ff.cc:337:slice$1070 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [195]).
+Adding EN signal on $auto$ff.cc:337:slice$1071 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [196]).
+Adding EN signal on $auto$ff.cc:337:slice$1072 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [197]).
+Adding EN signal on $auto$ff.cc:337:slice$1073 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [198]).
+Adding EN signal on $auto$ff.cc:337:slice$1074 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [199]).
+Adding EN signal on $auto$ff.cc:337:slice$1075 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [200]).
+Adding EN signal on $auto$ff.cc:337:slice$1076 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [201]).
+Adding EN signal on $auto$ff.cc:337:slice$1077 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [202]).
+Adding EN signal on $auto$ff.cc:337:slice$1078 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [203]).
+Adding EN signal on $auto$ff.cc:337:slice$1079 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [204]).
+Adding EN signal on $auto$ff.cc:337:slice$1080 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [205]).
+Adding EN signal on $auto$ff.cc:337:slice$1081 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [206]).
+Adding EN signal on $auto$ff.cc:337:slice$1082 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [207]).
+Adding EN signal on $auto$ff.cc:337:slice$1083 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [208]).
+Adding EN signal on $auto$ff.cc:337:slice$1084 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [209]).
+Adding EN signal on $auto$ff.cc:337:slice$1085 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [210]).
+Adding EN signal on $auto$ff.cc:337:slice$1086 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [211]).
+Adding EN signal on $auto$ff.cc:337:slice$1087 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [212]).
+Adding EN signal on $auto$ff.cc:337:slice$1088 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [213]).
+Adding EN signal on $auto$ff.cc:337:slice$1089 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [214]).
+Adding EN signal on $auto$ff.cc:337:slice$1090 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [215]).
+Adding EN signal on $auto$ff.cc:337:slice$1091 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [216]).
+Adding EN signal on $auto$ff.cc:337:slice$1092 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [217]).
+Adding EN signal on $auto$ff.cc:337:slice$1093 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [218]).
+Adding EN signal on $auto$ff.cc:337:slice$1094 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [219]).
+Adding EN signal on $auto$ff.cc:337:slice$1095 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [220]).
+Adding EN signal on $auto$ff.cc:337:slice$1096 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [221]).
+Adding EN signal on $auto$ff.cc:337:slice$1097 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [222]).
+Adding EN signal on $auto$ff.cc:337:slice$1195 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [128]).
+Adding EN signal on $auto$ff.cc:337:slice$1196 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [129]).
+Adding EN signal on $auto$ff.cc:337:slice$1197 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [130]).
+Adding EN signal on $auto$ff.cc:337:slice$1198 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [131]).
+Adding EN signal on $auto$ff.cc:337:slice$1199 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [132]).
+Adding EN signal on $auto$ff.cc:337:slice$1200 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [133]).
+Adding EN signal on $auto$ff.cc:337:slice$1201 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [134]).
+Adding EN signal on $auto$ff.cc:337:slice$1202 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [135]).
+Adding EN signal on $auto$ff.cc:337:slice$1203 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [136]).
+Adding EN signal on $auto$ff.cc:337:slice$1204 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [137]).
+Adding EN signal on $auto$ff.cc:337:slice$1205 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [138]).
+Adding EN signal on $auto$ff.cc:337:slice$1206 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [139]).
+Adding EN signal on $auto$ff.cc:337:slice$1207 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [140]).
+Adding EN signal on $auto$ff.cc:337:slice$1208 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [141]).
+Adding EN signal on $auto$ff.cc:337:slice$1209 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [142]).
+Adding EN signal on $auto$ff.cc:337:slice$1210 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [143]).
+Adding EN signal on $auto$ff.cc:337:slice$1211 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [144]).
+Adding EN signal on $auto$ff.cc:337:slice$1212 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [145]).
+Adding EN signal on $auto$ff.cc:337:slice$1213 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [146]).
+Adding EN signal on $auto$ff.cc:337:slice$1214 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [147]).
+Adding EN signal on $auto$ff.cc:337:slice$1215 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [148]).
+Adding EN signal on $auto$ff.cc:337:slice$1216 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [149]).
+Adding EN signal on $auto$ff.cc:337:slice$1217 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [150]).
+Adding EN signal on $auto$ff.cc:337:slice$1218 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [151]).
+Adding EN signal on $auto$ff.cc:337:slice$1219 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [152]).
+Adding EN signal on $auto$ff.cc:337:slice$1220 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [153]).
+Adding EN signal on $auto$ff.cc:337:slice$1221 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [154]).
+Adding EN signal on $auto$ff.cc:337:slice$1222 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [155]).
+Adding EN signal on $auto$ff.cc:337:slice$1223 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [156]).
+Adding EN signal on $auto$ff.cc:337:slice$1224 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [157]).
+Adding EN signal on $auto$ff.cc:337:slice$1225 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [158]).
+Adding EN signal on $auto$ff.cc:337:slice$1227 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [96]).
+Adding EN signal on $auto$ff.cc:337:slice$1228 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [97]).
+Adding EN signal on $auto$ff.cc:337:slice$1229 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [98]).
+Adding EN signal on $auto$ff.cc:337:slice$1230 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [99]).
+Adding EN signal on $auto$ff.cc:337:slice$1231 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [100]).
+Adding EN signal on $auto$ff.cc:337:slice$1232 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [101]).
+Adding EN signal on $auto$ff.cc:337:slice$1233 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [102]).
+Adding EN signal on $auto$ff.cc:337:slice$1234 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [103]).
+Adding EN signal on $auto$ff.cc:337:slice$1235 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [104]).
+Adding EN signal on $auto$ff.cc:337:slice$1236 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [105]).
+Adding EN signal on $auto$ff.cc:337:slice$1237 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [106]).
+Adding EN signal on $auto$ff.cc:337:slice$1238 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [107]).
+Adding EN signal on $auto$ff.cc:337:slice$1239 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [108]).
+Adding EN signal on $auto$ff.cc:337:slice$1240 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [109]).
+Adding EN signal on $auto$ff.cc:337:slice$1241 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [110]).
+Adding EN signal on $auto$ff.cc:337:slice$1242 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [111]).
+Adding EN signal on $auto$ff.cc:337:slice$1243 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [112]).
+Adding EN signal on $auto$ff.cc:337:slice$1244 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [113]).
+Adding EN signal on $auto$ff.cc:337:slice$1245 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [114]).
+Adding EN signal on $auto$ff.cc:337:slice$1246 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [115]).
+Adding EN signal on $auto$ff.cc:337:slice$1247 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [116]).
+Adding EN signal on $auto$ff.cc:337:slice$1248 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [117]).
+Adding EN signal on $auto$ff.cc:337:slice$1249 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [118]).
+Adding EN signal on $auto$ff.cc:337:slice$1250 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [119]).
+Adding EN signal on $auto$ff.cc:337:slice$1251 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [120]).
+Adding EN signal on $auto$ff.cc:337:slice$1252 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [121]).
+Adding EN signal on $auto$ff.cc:337:slice$1253 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [122]).
+Adding EN signal on $auto$ff.cc:337:slice$1254 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [123]).
+Adding EN signal on $auto$ff.cc:337:slice$1255 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [124]).
+Adding EN signal on $auto$ff.cc:337:slice$1256 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [125]).
+Adding EN signal on $auto$ff.cc:337:slice$1257 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [126]).
+Adding EN signal on $auto$ff.cc:337:slice$1259 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [64]).
+Adding EN signal on $auto$ff.cc:337:slice$1260 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [65]).
+Adding EN signal on $auto$ff.cc:337:slice$1261 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [66]).
+Adding EN signal on $auto$ff.cc:337:slice$1262 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [67]).
+Adding EN signal on $auto$ff.cc:337:slice$1263 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [68]).
+Adding EN signal on $auto$ff.cc:337:slice$1264 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [69]).
+Adding EN signal on $auto$ff.cc:337:slice$1265 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [70]).
+Adding EN signal on $auto$ff.cc:337:slice$1266 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [71]).
+Adding EN signal on $auto$ff.cc:337:slice$1267 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [72]).
+Adding EN signal on $auto$ff.cc:337:slice$1268 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [73]).
+Adding EN signal on $auto$ff.cc:337:slice$1269 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [74]).
+Adding EN signal on $auto$ff.cc:337:slice$1270 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [75]).
+Adding EN signal on $auto$ff.cc:337:slice$1271 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [76]).
+Adding EN signal on $auto$ff.cc:337:slice$1272 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [77]).
+Adding EN signal on $auto$ff.cc:337:slice$1273 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [78]).
+Adding EN signal on $auto$ff.cc:337:slice$1274 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [79]).
+Adding EN signal on $auto$ff.cc:337:slice$1275 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [80]).
+Adding EN signal on $auto$ff.cc:337:slice$1276 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [81]).
+Adding EN signal on $auto$ff.cc:337:slice$1277 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [82]).
+Adding EN signal on $auto$ff.cc:337:slice$1278 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [83]).
+Adding EN signal on $auto$ff.cc:337:slice$1279 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [84]).
+Adding EN signal on $auto$ff.cc:337:slice$1280 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [85]).
+Adding EN signal on $auto$ff.cc:337:slice$1281 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [86]).
+Adding EN signal on $auto$ff.cc:337:slice$1282 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [87]).
+Adding EN signal on $auto$ff.cc:337:slice$1283 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [88]).
+Adding EN signal on $auto$ff.cc:337:slice$1284 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [89]).
+Adding EN signal on $auto$ff.cc:337:slice$1285 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [90]).
+Adding EN signal on $auto$ff.cc:337:slice$1286 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [91]).
+Adding EN signal on $auto$ff.cc:337:slice$1287 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [92]).
+Adding EN signal on $auto$ff.cc:337:slice$1288 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [93]).
+Adding EN signal on $auto$ff.cc:337:slice$1289 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [94]).
+Adding EN signal on $auto$ff.cc:337:slice$1425 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [0], Q = \rf.regs [480]).
+Adding EN signal on $auto$ff.cc:337:slice$1426 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [1], Q = \rf.regs [481]).
+Adding EN signal on $auto$ff.cc:337:slice$1427 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [2], Q = \rf.regs [482]).
+Adding EN signal on $auto$ff.cc:337:slice$1428 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [3], Q = \rf.regs [483]).
+Adding EN signal on $auto$ff.cc:337:slice$1429 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [4], Q = \rf.regs [484]).
+Adding EN signal on $auto$ff.cc:337:slice$1430 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [5], Q = \rf.regs [485]).
+Adding EN signal on $auto$ff.cc:337:slice$1431 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [6], Q = \rf.regs [486]).
+Adding EN signal on $auto$ff.cc:337:slice$1432 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [7], Q = \rf.regs [487]).
+Adding EN signal on $auto$ff.cc:337:slice$1433 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [8], Q = \rf.regs [488]).
+Adding EN signal on $auto$ff.cc:337:slice$1434 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [9], Q = \rf.regs [489]).
+Adding EN signal on $auto$ff.cc:337:slice$1435 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [10], Q = \rf.regs [490]).
+Adding EN signal on $auto$ff.cc:337:slice$1436 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [11], Q = \rf.regs [491]).
+Adding EN signal on $auto$ff.cc:337:slice$1437 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [12], Q = \rf.regs [492]).
+Adding EN signal on $auto$ff.cc:337:slice$1438 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [13], Q = \rf.regs [493]).
+Adding EN signal on $auto$ff.cc:337:slice$1439 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [14], Q = \rf.regs [494]).
+Adding EN signal on $auto$ff.cc:337:slice$1440 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [15], Q = \rf.regs [495]).
+Adding EN signal on $auto$ff.cc:337:slice$1441 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [16], Q = \rf.regs [496]).
+Adding EN signal on $auto$ff.cc:337:slice$1442 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [17], Q = \rf.regs [497]).
+Adding EN signal on $auto$ff.cc:337:slice$1443 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [18], Q = \rf.regs [498]).
+Adding EN signal on $auto$ff.cc:337:slice$1444 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [19], Q = \rf.regs [499]).
+Adding EN signal on $auto$ff.cc:337:slice$1445 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [20], Q = \rf.regs [500]).
+Adding EN signal on $auto$ff.cc:337:slice$1446 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [21], Q = \rf.regs [501]).
+Adding EN signal on $auto$ff.cc:337:slice$1447 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [22], Q = \rf.regs [502]).
+Adding EN signal on $auto$ff.cc:337:slice$1448 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [23], Q = \rf.regs [503]).
+Adding EN signal on $auto$ff.cc:337:slice$1449 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [24], Q = \rf.regs [504]).
+Adding EN signal on $auto$ff.cc:337:slice$1450 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [25], Q = \rf.regs [505]).
+Adding EN signal on $auto$ff.cc:337:slice$1451 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [26], Q = \rf.regs [506]).
+Adding EN signal on $auto$ff.cc:337:slice$1452 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [27], Q = \rf.regs [507]).
+Adding EN signal on $auto$ff.cc:337:slice$1453 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [28], Q = \rf.regs [508]).
+Adding EN signal on $auto$ff.cc:337:slice$1454 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [29], Q = \rf.regs [509]).
+Adding EN signal on $auto$ff.cc:337:slice$1455 ($_DFFE_PN0P_) from module mini_risc_cpu (D = \rf.rd_data [30], Q = \rf.regs [510]).
+
+4.5.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mini_risc_cpu..
+Removed 674 unused cells and 1528 unused wires.
+<suppressed ~675 debug messages>
+
+4.5.5. Rerunning OPT passes. (Removed registers in this run.)
+
+4.5.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mini_risc_cpu.
+
+4.5.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mini_risc_cpu'.
+Computing hashes of 4517 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+Computing hashes of 4021 cells of `\mini_risc_cpu'.
+Finding duplicate cells in `\mini_risc_cpu'.
+<suppressed ~1488 debug messages>
+Removed a total of 496 cells.
+
+4.5.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.5.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mini_risc_cpu..
+Removed 0 unused cells and 496 unused wires.
+<suppressed ~1 debug messages>
+
+4.5.10. Finished fast OPT passes.
+
+5. Executing CHECK pass (checking for obvious problems).
+Checking module mini_risc_cpu...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.70 (git sha1 28ba3cb92, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\mini_risc_cpu": {
+         "num_wires":         1045,
+         "num_wire_bits":     5883,
+         "num_pub_wires":     93,
+         "num_pub_wire_bits": 2588,
+         "num_ports":         19,
+         "num_port_bits":     237,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         4021,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 791,
+            "$_DFFE_PN0P_": 677,
+            "$_DFF_PN0_": 1,
+            "$_MUX_": 1637,
+            "$_NOT_": 116,
+            "$_OR_": 545,
+            "$_XOR_": 254
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1045,
+         "num_wire_bits":     5883,
+         "num_pub_wires":     93,
+         "num_pub_wire_bits": 2588,
+         "num_ports":         19,
+         "num_port_bits":     237,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         4021,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 791,
+            "$_DFFE_PN0P_": 677,
+            "$_DFF_PN0_": 1,
+            "$_MUX_": 1637,
+            "$_NOT_": 116,
+            "$_OR_": 545,
+            "$_XOR_": 254
+         }
+      }
+}

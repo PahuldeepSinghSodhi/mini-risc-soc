@@ -1,0 +1,9 @@
+verilator==5.48.0
+yowasp-yosys==0.70.0.0.post1259
+cmake==4.4.4
+ninja==1.13.2
+systemc==3.0.2.1
+yowasp-runtime==1.96
+wasmtime==47.0.1
+platformdirs==4.13.0
+click==8.5.0

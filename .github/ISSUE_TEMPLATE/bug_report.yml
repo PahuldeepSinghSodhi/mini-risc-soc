@@ -1,0 +1,23 @@
+name: Bug report
+description: Report an RTL, firmware, build, or verification problem.
+title: "[Bug]: "
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+      description: Include the instruction, peripheral, or command involved.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide the command, source revision, workload/seed, and relevant error output.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, Python/compiler versions, and relevant entries from reports/toolchain.json. Remove personal paths before posting.

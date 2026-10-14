@@ -1,0 +1,13 @@
+.venv/
+build/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+*.vcd
+*.fst
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

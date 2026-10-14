@@ -1,0 +1,50 @@
+{
+   "creator": "Yosys 0.70 (git sha1 28ba3cb92, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\mini_risc_cpu": {
+         "num_wires":         1045,
+         "num_wire_bits":     5883,
+         "num_pub_wires":     93,
+         "num_pub_wire_bits": 2588,
+         "num_ports":         19,
+         "num_port_bits":     237,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         4021,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 791,
+            "$_DFFE_PN0P_": 677,
+            "$_DFF_PN0_": 1,
+            "$_MUX_": 1637,
+            "$_NOT_": 116,
+            "$_OR_": 545,
+            "$_XOR_": 254
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1045,
+         "num_wire_bits":     5883,
+         "num_pub_wires":     93,
+         "num_pub_wire_bits": 2588,
+         "num_ports":         19,
+         "num_port_bits":     237,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         4021,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_AND_": 791,
+            "$_DFFE_PN0P_": 677,
+            "$_DFF_PN0_": 1,
+            "$_MUX_": 1637,
+            "$_NOT_": 116,
+            "$_OR_": 545,
+            "$_XOR_": 254
+         }
+      }
+}

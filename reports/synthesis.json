@@ -1,0 +1,96 @@
+{
+  "flow": "read_slang; synth coarse; synth fine -noabc; check -assert; stat",
+  "metadata": {
+    "source_sha256": "6839d37bf0bf3f29f39a46947f3fb0888ccbb871100384502caaac2c2faa4d63",
+    "firmware_sha256": "30109dac80da5043bf03de693f3015a0df74f2e92d873b6dead307daa6e7719d"
+  },
+  "note": "Technology-independent primitive counts, no ABC/library/FPGA mapping, placement, timing or power analysis.",
+  "tops": {
+    "mini_risc_cpu": {
+      "generic_cells": 4021,
+      "sequential_bit_cells": 678,
+      "cell_types": {
+        "$_AND_": 791,
+        "$_DFFE_PN0P_": 677,
+        "$_DFF_PN0_": 1,
+        "$_MUX_": 1637,
+        "$_NOT_": 116,
+        "$_OR_": 545,
+        "$_XOR_": 254
+      },
+      "coarse_memories": [
+        {
+          "name": "$auto$proc_rom.cc:155:do_switch$2",
+          "width": 3,
+          "words": 16,
+          "bits": 48,
+          "kind": "inferred decode ROM"
+        }
+      ],
+      "mapped_memory_bits": 0,
+      "check_passed": true
+    },
+    "mini_risc_soc": {
+      "generic_cells": 24114,
+      "sequential_bit_cells": 9653,
+      "cell_types": {
+        "$_AND_": 2097,
+        "$_DFFE_PN0P_": 964,
+        "$_DFFE_PN1P_": 10,
+        "$_DFFE_PP_": 8640,
+        "$_DFF_PN0_": 37,
+        "$_DFF_PN1_": 2,
+        "$_MUX_": 10687,
+        "$_NOT_": 227,
+        "$_OR_": 981,
+        "$_XOR_": 469
+      },
+      "coarse_memories": [
+        {
+          "name": "$auto$proc_rom.cc:155:do_switch$2",
+          "width": 3,
+          "words": 16,
+          "bits": 48,
+          "kind": "inferred decode ROM"
+        },
+        {
+          "name": "dmem",
+          "width": 32,
+          "words": 256,
+          "bits": 8192,
+          "kind": "declared memory"
+        },
+        {
+          "name": "imem",
+          "width": 32,
+          "words": 256,
+          "bits": 8192,
+          "kind": "declared memory"
+        },
+        {
+          "name": "sensor_fifo.storage",
+          "width": 12,
+          "words": 16,
+          "bits": 192,
+          "kind": "declared memory"
+        },
+        {
+          "name": "serial.rx_fifo.storage",
+          "width": 8,
+          "words": 16,
+          "bits": 128,
+          "kind": "declared memory"
+        },
+        {
+          "name": "serial.tx_fifo.storage",
+          "width": 8,
+          "words": 16,
+          "bits": 128,
+          "kind": "declared memory"
+        }
+      ],
+      "mapped_memory_bits": 0,
+      "check_passed": true
+    }
+  }
+}
